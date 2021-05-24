@@ -370,7 +370,7 @@ class GeneradorController extends Controller
     return view('turnero.index', ['sucursal'=>$id_s, 'totem'=>$nro_totem, 'datos_suc'=>$datos_suc]);
    }
 
-   public function llamadorTurnero($id_s, $dni){
+   public function llamador($id_s, $dni){
 
     dd($dni);
      //  consulta a Berco
