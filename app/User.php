@@ -13,10 +13,7 @@ class User extends Authenticatable
 
     use Notifiable;
     
-    public function orden()
-    {
-        return $this->hasOne(Orden::class, 'users_id');
-    }
+    
 
     /**
      * The attributes that are mass assignable.

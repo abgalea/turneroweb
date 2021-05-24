@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRendicionsTable extends Migration
+class CreateSucursalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateRendicionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rendicion', function (Blueprint $table) {
+        Schema::create('sucursales', function (Blueprint $table) {
             $table->id();
-            $table->integer('monto');
-            $table->integer('users_id');
-            $table->date('fecha');
+            $table->string('codigo');
             $table->string('detalle');
             $table->timestamps();
         });
@@ -30,6 +28,6 @@ class CreateRendicionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rendicions');
+        Schema::dropIfExists('sucursales');
     }
 }

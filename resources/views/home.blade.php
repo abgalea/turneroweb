@@ -32,7 +32,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>{{ $total_afiliados }}</h3>
+                  <h3>00</h3>
   
                   <p>Afiliados en Misiones</p>
                 </div>
@@ -46,7 +46,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>{{ $total_afiliados_formosa }}</h3>
+                  <h3>00</h3>
   
                   <p>Afiliados en Formosa</p>
                 </div>
@@ -60,7 +60,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>{{ $total_afiliados_ospta }}</h3>
+                  <h3></h3>
   
                   <p>Afiliados en OSPTA</p>
                 </div>
@@ -75,7 +75,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>{{ $cant_ordenes}}</h3>
+                  <h3></h3>
   
                   <p>Cant orden mes</p>
                 </div>
@@ -105,15 +105,7 @@
                     </thead>
                     <tbody>
                       
-                      @foreach ($listado as $item)
-                      <tr>
-                        <td>-</td>
-                        <td>{{$item->name}}</td>
-                        <td>{{$item->localidad}}</td>
-                       
-                        <td><span class="badge bg-warning">{{$item->canti}}</span></td>
-                      </tr> 
-                      @endforeach
+                      
                       
                       
                     </tbody>
