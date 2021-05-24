@@ -1,0 +1,282 @@
+body{
+ background: #f2f2f2;
+ padding: 0;
+ margin: 0;
+ display: grid;
+ grid-template-columns: minmax(auto, 2560px);
+ height: 100vh;
+}
+/***Customer-Screen Page***/
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(../fonts/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(../fonts/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.hero-pantalla{
+  display: grid;
+  grid-template-columns: 400px 1fr 360px;
+  grid-template-rows: 150px 1fr auto auto;
+  grid-template-areas: "logo logo logo"
+                       "llamador llamador llamador"
+                       "slider slider slider"
+                       "anuncios anuncios anuncios";
+  grid-column-gap: 10px;
+  height: 100vh;                      
+}
+#audios{
+  display: none;
+}
+.hero-pantalla .logo{
+  grid-area: logo;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: #df040b;
+}
+.logo img{
+  max-width: 480px;
+}
+.reloj-screen{
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center;
+  line-height: 150px;
+  color: #fff;
+}
+.reloj-screen span{
+  font-size: 4em;
+  font-family: 'Lato', sans-serif;
+}
+.reloj-screen span:after{
+ content: ":";
+ margin: 0 5px;
+ display: inline-block; 
+}
+.reloj-screen span:last-child:after{
+ display: none;
+}
+/*.publicidad{
+  grid-area: publicidad;
+  display: grid;
+  align-items: center; 
+}
+.publicidad video{
+  border: 0;
+  width: 100%;
+  height: auto;
+}*/
+.llamador{
+  grid-area: llamador;
+  display: grid;
+  grid-template-columns: 1fr 350px 680px;
+  grid-template-rows: 50px repeat(4, 200px);
+  grid-gap: 15px;
+  text-align: center;
+  align-items: center;
+  font-size: 5em;
+  margin-right: 15px;
+  overflow: hidden;
+  margin-top: 20px; 
+}
+.llamador span{
+  border: 1px solid #ddd;
+  font-family: 'Lato', sans-serif;
+  margin-top: 10px;
+  border-radius: 10px;  
+}
+.llamador h2{
+  border: 1px solid #ddd;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  border-radius: 10px;  
+}
+.llamador .gray{
+  background-color: #ddd; 
+}
+.llamador .red{
+  background-color: #df040b;
+  color: #fff; 
+}
+.name1{
+  grid-column: 1;
+  grid-row: 2;
+  animation: turno1 2s;
+  background-color: #df040b;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear, ease-in-out;
+  color: #fff;
+  overflow-x: hidden;
+  white-space: nowrap; 
+  font-size: 1em;
+  padding: 24px;
+}
+.name2{
+  grid-column: 1;
+  grid-row: 3;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-size: 1em;
+  padding: 24px;
+}
+.name3{
+  grid-column: 1;
+  grid-row: 4;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-size: 1em;
+  padding: 24px;
+}
+.name4{
+  grid-column: 1;
+  grid-row: 5;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-size: 1em;
+  padding: 24px;
+}
+.ticket1{
+  grid-column: 2;
+  grid-row:2;
+  animation: turno1 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear, ease-in-out;
+}
+.ticket2{
+  grid-column: 2;
+  grid-row:3;
+}
+.ticket3{
+  grid-column: 2;
+  grid-row:4;
+}
+.ticket4{
+  grid-column: 2;
+  grid-row:5;
+}
+.box1{
+  grid-column: 3;
+  grid-row:2;
+  overflow-x: hidden;
+  white-space: nowrap; 
+}
+.box2{
+  grid-column: 3;
+  grid-row:3;
+  overflow-x: hidden;
+  white-space: nowrap;  
+}
+.box3{
+  grid-column: 3;
+  grid-row:4;
+  overflow-x: hidden;
+  white-space: nowrap;  
+}
+.box4{
+  grid-column: 3;
+  grid-row:5;
+  overflow-x: hidden;
+  white-space: nowrap;  
+}
+.slider{
+  grid-area: slider;
+  display: grid;
+  grid-template-columns: 25% 1fr;
+}
+.slider .slider__title{
+  grid-column: 1;
+  text-align: center;
+  font-size: 3.5em;
+  background: silver;
+  border-radius: 0 25px 0 0;
+}
+.slider__title h2{
+  margin: 0;
+  text-align: center;
+  line-height: 150px;
+  color: #df040b;
+}
+.slider__container{
+  overflow-x: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+.slider .slider__ticket{
+  grid-column: 2;
+  font-size: 5em;
+  text-align: start;
+  line-height: 150px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  animation: textDeslizar2 10s;
+	animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.slider__ticket__1{
+  margin-left: 15px;
+  background: silver;
+  padding: 0 25px 0 25px;
+  border-radius: 10px;
+}
+.anuncios{
+  grid-area: anuncios;
+  display: grid;
+  justify-content: center;
+  background: #df040b;  
+}
+.anuncios h2{
+  color: #fff;
+  font-size: 4em;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: animtext 7s steps(80, end); 
+  transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  animation-iteration-count: infinite;
+}
+
+.lead{
+  display: none;
+}
+
+@keyframes animtext { 
+  from {
+     width: 0;
+     transition: all 2s ease-in-out;
+  } 
+}
+@keyframes turno1 { 
+  from {
+     opacity: 0;
+  }
+  to{
+    opacity: 1
+  } 
+}
+@keyframes textDeslizar2{
+  0%{
+		transform: translateX(1500px);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+
+
+/*end customer-Screen Page*/

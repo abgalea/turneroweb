@@ -13,6 +13,7 @@ use App\nomenclatura;
 use App\Orden;
 use App\Practica;
 use App\PracticaOrden;
+use App\Sucursale;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -361,4 +362,51 @@ class GeneradorController extends Controller
 
     return view('affiliates.show', ['certificados'=>$certificados]);
    }
+
+   public function turnero($id_s, $nro_totem){
+    // dd($nro_totem);
+    $datos_suc = Sucursale::findOrFail($id_s);
+    // dd($datos_suc);
+    return view('turnero.index', ['sucursal'=>$id_s, 'totem'=>$nro_totem, 'datos_suc'=>$datos_suc]);
+   }
+
+   public function llamadorTurnero($id_s, $dni){
+
+    dd($dni);
+     //  consulta a Berco
+    // $serverName = "DTVDB002";
+	  // $connectionOptions = array(
+		//   "Database" => "BI_PROD"
+		//   // "Uid" => "totemps",
+		//   // "PWD" => "Tp123456"
+	  // );
+	  // //Establecimiento de la Conexión
+	  // $conn = sqlsrv_connect( $serverName, $connectionOptions );
+		//   $cantidad = strlen($dni);
+		//   if($cantidad > 8){
+		// 	  $tipo = 'cuit';
+		//   }else{
+		// 	  $tipo = 'dni';
+		//   }
+		//   $tsql= "EXEC sp_TURNERO_EXTERNO_CLIENTE $tipo, $dni";
+		//   //$params = array('dni','16512574');
+		//   //Ejecutamos la consulta
+		//   $getResults= sqlsrv_query( $conn, $tsql );
+		//   while ( $row = sqlsrv_fetch_array($getResults)) {
+		// 	  if ( $row[0] != 0){
+		// 		  $nombre_cliente = utf8_encode($row[1]);
+    //     }else{
+    //       $nombre_cliente = 'Hakuna Matata';
+    //     }
+    //   }
+
+
+
+    // // dd($nro_totem);
+    // $datos_suc = Sucursale::findOrFail($id_s);
+    // // dd($datos_suc);
+    // return view('turnero.index', ['sucursal'=>$id_s]);
+   }
 }
+
+

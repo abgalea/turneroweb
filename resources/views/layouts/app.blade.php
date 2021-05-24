@@ -203,6 +203,39 @@
                             </li>
 
                             <li class="nav-item">
+                                <a href="{{ url('categorias')}}"
+                                    class="{{ Request::path() == 'categorias' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>
+                                        Categorias                                       
+                                        <span class="right badge badge-danger"></span>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ url('sucursales')}}"
+                                    class="{{ Request::path() == 'sucursales' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-building"></i>
+                                    <p>
+                                        Sucursales                                       
+                                        <span class="right badge badge-danger"></span>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ url('tipovendedore')}}"
+                                    class="{{ Request::path() == 'tipovendedore' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-user-tie"></i>
+                                    <p>
+                                        Tipo Vendedor                                       
+                                        <span class="right badge badge-danger"></span>
+                                    </p>
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
                                 <a href="{{ url('affiliates')}}"
                                     class="{{ Request::path() == 'affiliates' ? 'nav-link active' : 'nav-link' }}">
                                     <i class="nav-icon fas fa-users"></i>

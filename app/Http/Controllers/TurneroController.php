@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
+use App\Turnero;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CategoriaController extends Controller
+class TurneroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +14,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->nivel == 'admin'){
-
-            $categorias = Categoria::all();
-            return view('categoria.index', ['categorias'=>$categorias]);
-            // $certificados = Categoria::where('dependencia','LIKE',Auth::user()->dependencia)
-            //  ->orderBy('id', 'desc')
-            //  ->paginate(100);
-            //  return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
-        }
+        //
     }
 
     /**
@@ -50,10 +41,10 @@ class CategoriaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Turnero  $turnero
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show(Turnero $turnero)
     {
         //
     }
@@ -61,10 +52,10 @@ class CategoriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Turnero  $turnero
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit(Turnero $turnero)
     {
         //
     }
@@ -73,10 +64,10 @@ class CategoriaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Turnero  $turnero
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Turnero $turnero)
     {
         //
     }
@@ -84,10 +75,10 @@ class CategoriaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Turnero  $turnero
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Turnero $turnero)
     {
         //
     }

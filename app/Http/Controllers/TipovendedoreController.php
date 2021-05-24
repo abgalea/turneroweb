@@ -14,7 +14,8 @@ class TipovendedoreController extends Controller
      */
     public function index()
     {
-        //
+        $tipos = Tipovendedore::all();
+        return view('tiposvendedores.index', ['tipos'=>$tipos]);
     }
 
     /**

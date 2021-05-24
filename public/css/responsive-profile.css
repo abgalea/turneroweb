@@ -1,0 +1,65 @@
+
+/***** responsive ****/
+
+@media only screen and (max-width: 1920px) {
+
+}
+@media only screen and (max-width: 1440px) {
+    .reloj-screen { 
+        line-height: 100px;     
+    }
+    .hero-pantalla {
+        grid-template-columns: 400px 1fr 360px;
+        grid-template-rows: 100px 1fr auto auto;
+    }
+    .logo img {
+        max-width: 350px;
+    }
+    .llamador{
+        grid-template-columns: 1fr 190px 350px;
+        grid-template-rows: 50px repeat(4, 100px);
+        font-size: 3em;
+        margin-top: 20px;       
+    }	
+    .slider .slider__title {
+        grid-column: 1;
+        text-align: center;
+        font-size: 2.5em;
+        background: silver;
+        border-radius: 0 25px 0 0;
+    }
+    .anuncios h2 {
+        color: #fff;
+        font-size: 2em;
+    }
+    .name1{
+        padding: 17px;
+      }
+}
+@media only screen and (max-width: 1024px) {
+    .logo img{
+        max-width: 300px;
+    }
+    .reloj-screen{
+        line-height: 100px;
+    }
+    .reloj-screen span{
+        font-size: 2.8em;
+    }
+    .llamador{
+      grid-template-columns: 1fr 140px 250px;
+      grid-template-rows: 50px repeat(4, 60px);
+      font-size: 2em;
+      grid-column-gap: 15px;
+      margin-top: 0;       
+    }
+    .slider .slider__title {
+        font-size: 2em;
+    }
+    .anuncios h2{
+          font-size: 1.5em;	
+    }	
+
+}
+
+

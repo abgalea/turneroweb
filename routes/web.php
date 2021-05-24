@@ -8,6 +8,9 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('usuarios', 'UserController')->middleware('auth');
+Route::resource('categorias', 'CategoriaController')->middleware('auth');
+Route::resource('sucursales', 'SucursaleController')->middleware('auth');
+Route::resource('tipovendedore', 'TipovendedoreController')->middleware('auth');
 Route::resource('certificados','CertificadoController')->middleware('auth');
 Route::resource('convenios','ConvenioController')->middleware('auth');
 Route::resource('copagos','CopagoController')->middleware('auth');
@@ -34,6 +37,11 @@ Route::name('practica')->get('/practica/{id}', 'GeneradorController@practica');
 Route::name('laboratorio')->get('/laboratorio/{id}', 'GeneradorController@laboratorio');
 Route::name('controlOrden')->get('/controlOrden/{id}', 'GeneradorController@controlOrden');
 Route::name('showAfi')->get('/showAfi/{id}', 'GeneradorController@showAfi');
+
+
+// rutas turnero publico
+Route::name('turnero')->get('/turnero/{id_s}/{nro_totem}', 'GeneradorController@turnero');
+Route::name('llamadorTurnero')->get('/llamador/{id_s}/{dni}', 'GeneradorController@llamadorTurnero');
 
 // Route::name('reporte1')->get('/reporte-fecha/', 'GeneradorController@reporte1');
 // Route::name('reporte-fechas')->get('CertificadoController@reporte1')->middleware('auth');

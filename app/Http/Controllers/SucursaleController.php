@@ -14,7 +14,8 @@ class SucursaleController extends Controller
      */
     public function index()
     {
-        //
+        $sucursales = Sucursale::all();
+        return view('sucursales.index', ['sucursales'=>$sucursales]);
     }
 
     /**
