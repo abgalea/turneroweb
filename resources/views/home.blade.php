@@ -8,9 +8,9 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-header bg-blue">
-            Grupo MELD SALUD 
+            Laboratorios CEBAC 
         </div>
-        <img src="/img/banner_4.jpg" class="card-img-top" alt="...">
+        <img src="/img/cebac.svg" class="card-img-top" alt="...">
       </div>
       {{-- <img src="/img/banner.png" class="img-fluid" alt="..."> --}}
       {{-- <div class="form-inline">

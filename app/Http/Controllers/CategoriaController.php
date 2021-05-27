@@ -23,6 +23,11 @@ class CategoriaController extends Controller
             //  ->orderBy('id', 'desc')
             //  ->paginate(100);
             //  return view('certificados.index', ['certificados' => $certificados, 'search' => $query]);
+        }else{
+            $categorias = Categoria::where('sucursal_id','LIKE',Auth::user()->sucursal)
+            ->orderBy('id', 'desc')
+            ->get();
+            return view('categoria.index', ['categorias'=>$categorias]);
         }
     }
 

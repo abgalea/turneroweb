@@ -47,14 +47,14 @@
     <table id="reporte1" name="reporte1" class="table table-striped table-condensed table-bordered dt-responsive nowrap table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
-            <th scope="col">ID</th>
+            <th style="width: 40px">ID</th>
             <th scope="col">SUCURSAL</th>
             <th scope="col">CATEGORIA</th>
             <th scope="col">LETRA</th>
             <th scope="col">CANT BOX</th>
             <th scope="col">BTN TOTEM</th>
             <th scope="col">ESTADO</th>
-            <th scope="col">EDITAR</th>
+            <th style="width: 40px">EDITAR</th>
             {{-- <th scope="col">Borrar</th> --}}
             </tr>
         </thead>
@@ -63,13 +63,13 @@
 
             <tr>
             <td>{{$categoria->id}}</td>
-            <td>{{$categoria->sucursal_id}}</td>
+            <td>{{$categoria->sucursal->codigo}} - {{$categoria->sucursal->detalle}}</td>
             <td>{{$categoria->nombre}}</td>
             <td>{{$categoria->letra}}</td>
             <td>{{$categoria->cant_box}}</td>
             <td>{{$categoria->btn_totem}}</td>
             <td>{{$categoria->estado}}</td>
-            <td><a href="{{ route('categoria.edit', $categoria->id) }}"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i></button></a></td>
+            <td><a href=""><button type="button" class="btn btn-info"><i class="fas fa-edit"></i></button></a></td>
             </tr>
             @endforeach
         </tbody>

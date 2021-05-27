@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sistema Ingral Obra Social</title>
+    <title>Laboratorios CEBAC</title>
 
     <!-- Font Awesome -->
   <link rel="stylesheet" href="{{URL ('/plugins/fontawesome-free/css/all.min.css')}}">
@@ -152,9 +152,7 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="{{ url('/') }}" class="brand-link">
-                    <img src="{{ asset('/img/logo_meld_grande.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                        style="opacity: .8">
-                    <span class="brand-text font-weight-light">Grupo MELD</span>
+                    <span class="brand-text font-weight-light">CEBAC</span>
                 </a>
 
                 <!-- Sidebar -->
@@ -235,125 +233,7 @@
                                 </a>
                             </li>
                             
-                            <li class="nav-item">
-                                <a href="{{ url('affiliates')}}"
-                                    class="{{ Request::path() == 'affiliates' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>
-                                        Afiliados                                       
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url('/listadoPracticas')}}"
-                                    class="{{ Request::path() === 'listadoPracticas' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-hashtag"></i>
-                                    <p>
-                                        Prácticas                                       
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{ url('convenios')}}"
-                                    class="{{ Request::path() === 'convenios' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-handshake"></i>
-                                    <p>
-                                        Convenios                                       
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
                             
-                            <li class="nav-item">
-                                <a href="{{ url('egresos')}}"
-                                    class="{{ Request::path() === 'egresos' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-cash-register"></i>
-                                    <p>
-                                        Egresos                                       
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{ url('rendicion')}}"
-                                    class="{{ Request::path() === 'rendicion' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-hand-holding-usd"></i>
-                                    <p>
-                                        Rendiciones                           
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-
-                            @if ($usuario = Auth::user()->nivel != 'admin' || $usuario = Auth::user()->username == 'admin')
-                            <li class="nav-item">
-                                <a href="{{ url('reporteUsuario')}}"
-                                    class="{{ Request::path() === 'reporteUsuario' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-file"></i>
-                                    <p>
-                                        Reportes por Usuario                                      
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-                            @endif
-
-                            @if ($usuario = Auth::user()->nivel == 'admin')
-                            <li class="nav-item">
-                                <a href="{{ url('copagos')}}"
-                                    class="{{ Request::path() === 'copagos' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-hand-holding-usd"></i>
-                                    <p>
-                                        Copagos                                      
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url('rendicionUsuarios')}}"
-                                    class="{{ Request::path() === 'rendicionUsuarios' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                                    <p>
-                                        Rendiciones coseguro                                     
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url('reporteCantidad')}}"
-                                    class="{{ Request::path() === 'reporteCantidad' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-sort-amount-down"></i>
-                                    <p>
-                                        Cantidad por Afiliado                                     
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url('limites')}}"
-                                    class="{{ Request::path() === 'limites' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon far fa-folder-open"></i>
-                                    <p>
-                                        Limites                                     
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{ url('reporte-fechas')}}"
-                                    class="{{ Request::path() === 'reporte-fechas' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-file"></i>
-                                    <p>
-                                        Reportes por fechas                                      
-                                        <span class="right badge badge-danger"></span>
-                                    </p>
-                                </a>
-                            </li>
                             
 
                             <div style="border-bottom: 1px dashed white"></div>
@@ -379,7 +259,7 @@
                                 </a>
                             </li>
 
-                            @endif
+                           
                             
 
                             
@@ -453,7 +333,7 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <!-- NO QUITAR -->
-                Desarrollado por <b>MisioWEB</b> para el Grupo MELD Salud S.A.
+                Desarrollado por <b>MisioWEB</b> para el Laboratorios CEBAC
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 1.0
                     </div>

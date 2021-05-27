@@ -47,10 +47,10 @@
     <table id="reporte1" name="reporte1" class="table table-striped table-condensed table-bordered dt-responsive nowrap table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">CODIGO</th>
+            <th style="width: 40px">ID</th>
+            <th style="width: 60px">CODIGO</th>
             <th scope="col">NOMBRE</th>
-            <th scope="col">EDITAR</th>
+            <th style="width: 40px">EDITAR</th>
             {{-- <th scope="col">Borrar</th> --}}
             </tr>
         </thead>
@@ -60,7 +60,7 @@
             <tr>
             <td>{{$sucursale->id}}</td>
             <td>{{$sucursale->codigo}}</td>
-            <td>{{$sucursale->nombre}}</td>
+            <td>{{$sucursale->detalle}}</td>
             <td><a href="{{ route('sucursales.edit', $sucursale->id) }}"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i></button></a></td>
             </tr>
             @endforeach

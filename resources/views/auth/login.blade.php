@@ -5,7 +5,7 @@
     
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <img src="{{URL('/img/logo_meld_grande.png')}}" width="100%">
+        <img src="{{URL('/img/cebac.svg')}}" width="100%">
       </div>
       <div class="card-body">
         <p class="login-box-msg">Debe iniciar para poder usar el sistema</p>

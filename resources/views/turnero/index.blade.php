@@ -68,7 +68,7 @@
 
    <div class="hero">
     <div class="logo">
-      <img src="{{URL('/images/logo.png')}}">
+      <img src="{{URL('/img/cebac.svg')}}">
     </div>
     
     {{-- @if ($codigo != '0'){ --}}
