@@ -49,7 +49,7 @@
             document.getElementById("btn_continuar").innerHTML = "Buscando ...";
             document.getElementById("btn_continuar").disabled = true;
             // location.href='/sucursal='+document.getElementById("sucursal").value+'&dni='+document.getElementById("dni_cliente").value;
-            location.href='/llamador/'+document.getElementById("sucursal").value+'/'+document.getElementById("dni_cliente").value;
+            location.href='/llamador/'+document.getElementById("sucursal").value+'/'+document.getElementById("dni_cliente").value+'/'+document.getElementById("totem").value;
 
 
             }
@@ -76,6 +76,7 @@
     <div class="dni"> 
        <input class="number-dni" type="text" name="dni" placeholder="Ingresá tu DNI ó CUIT" id="dni_cliente" value="">
        <input type="hidden" id="sucursal" name="sucursal" value="{{$sucursal}}">
+       <input type="hidden" id="totem" name="totem" value="{{$totem}}">
        <div class="key">
           <div class="key-number">
             <button class="one" id="one" onclick="number(1)">1</button>

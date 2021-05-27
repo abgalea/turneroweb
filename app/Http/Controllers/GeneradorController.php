@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Afiliado;
+use App\Categoria;
 use Illuminate\Http\Request;
 use App\Certificados;
 use App\Copago;
@@ -14,6 +15,7 @@ use App\Orden;
 use App\Practica;
 use App\PracticaOrden;
 use App\Sucursale;
+use App\Turnero;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -370,9 +372,26 @@ class GeneradorController extends Controller
     return view('turnero.index', ['sucursal'=>$id_s, 'totem'=>$nro_totem, 'datos_suc'=>$datos_suc]);
    }
 
-   public function llamador($id_s, $dni){
 
-    dd($dni);
+
+
+
+
+   public function llamadorTurnero($id_s, $dni, $totem){
+
+    $categorias = Categoria::where('sucursal_id', '=', $id_s)
+    ->where('estado', '=', 1)
+    ->get();
+    // dd($categorias);
+    return view('turnero.categorias', ['sucursal'=>$id_s, 'dni'=>$dni, 'categorias'=>$categorias, 'totem'=>$totem]);
+    // $turnos = new Turnero();
+    // $turnos->dni = $dni;
+    // $turnos->sucursale_id = $id_s;
+    // $turnos->solicitud = now();
+
+    // $turnos->save();
+
+    // dd($turnos);
      //  consulta a Berco
     // $serverName = "DTVDB002";
 	  // $connectionOptions = array(
@@ -406,6 +425,54 @@ class GeneradorController extends Controller
     // $datos_suc = Sucursale::findOrFail($id_s);
     // // dd($datos_suc);
     // return view('turnero.index', ['sucursal'=>$id_s]);
+   }
+
+
+
+
+
+
+   
+   public function ticket($id_s, $dni, $cat, $totem){
+    // OBTENGO LOS DATOS DE LA CATEGORIA
+    $categoria = Categoria::findOrFail($cat);
+    $maximo = Turnero::where('categoria', '=', $cat)->max('numero'); // You get any max column
+    // $maximo = Turnero::max('numero');
+    if ($maximo == null) {
+      $maximo = 1;
+    }else {
+      $maximo++;
+    }
+    $fechaHoy = date('Y-m-d');
+    $tieneTurno = Turnero::where('dni', '=', $dni)
+    ->whereDate('solicitud', $fechaHoy)
+    ->where('inicio', '=', NULL)
+    ->count();
+    
+     if ($tieneTurno > 0) {
+    //   dd($tieneTurno);
+      $turno = Turnero::where('dni', '=', $dni)
+      ->whereDate('solicitud', $fechaHoy)
+      ->where('inicio', '=', NULL)
+      ->first();
+      return view('turnero.tieneTurno', ['sucursal'=>$id_s, 'totem'=>$totem, 'turnos'=>$turno]);
+     }else{
+      // print 'no tiene turno, le otorgamos uno';
+      $turnos = new Turnero();
+      $turnos->dni = $dni;
+      $turnos->numero = $maximo;
+      $turnos->sucursale_id = $id_s;
+      $turnos->categoria = $categoria->id;
+      $turnos->estados_id = 1;
+      $turnos->solicitud = now();
+
+      $turnos->save();
+      
+      return view('turnero.print', ['sucursal'=>$id_s, 'totem'=>$totem, 'turnos'=>$turnos]);
+     }
+    
+    
+
    }
 }
 
